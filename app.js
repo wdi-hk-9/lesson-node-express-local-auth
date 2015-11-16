@@ -27,6 +27,12 @@ app.use(flash());
 
 require('./config/passport')(passport);
 
+// This middleware will allow us to use the current user in the layout
+app.use(function (req, res, next) {
+  global.user = req.user;
+  next();
+});
+
 var routes = require('./config/routes');
 app.use(routes);
 

@@ -21,9 +21,13 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="user-menu">
-          <ul>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
+          <ul class="nav navbar-nav">
+            <% if (user) { %>
+              <li><a href="/logout">Logout</a></li<a>
+            <% } else { %>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Signup</a></li>
+            <% } %>
             <li><a href="/secret">Secret page (only if authenticated)</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
